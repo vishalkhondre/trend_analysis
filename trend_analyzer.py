@@ -41,5 +41,12 @@ def plot_data_and_trend(dataframe, title):
     plt.legend()
     plt.show()
 
+if __name__ == "__main__":
+    vibration_data = load_data_from_csv('vibration_data.csv')
+    calculate_moving_average(vibration_data, 100)
+    plot_data_and_trend(vibration_data, 'Vibration Analysis')
+
+
+
 
 
