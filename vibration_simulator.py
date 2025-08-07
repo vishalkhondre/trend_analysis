@@ -27,3 +27,17 @@ def generate_vibration_data(duration_minutes, sampling_rate_hz, base_amplitude, 
     # Generate a gradual trend
     trend = np.linspace(0, 0.5, total_samples)
     
+    # Combine the components
+    amplitude = sinusoidal_wave + noise + trend
+    
+    # Create a DataFrame
+    timestamps = pd.to_datetime(time, unit='s')
+    df = pd.DataFrame({'timestamp': timestamps, 'amplitude': amplitude})
+    
+    return df
+
+def save_data_to_csv(dataframe, filename):
+    dataframe.to_csv(filename, index=False)
+
+    
+
