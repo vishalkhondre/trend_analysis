@@ -39,5 +39,16 @@ def generate_vibration_data(duration_minutes, sampling_rate_hz, base_amplitude, 
 def save_data_to_csv(dataframe, filename):
     dataframe.to_csv(filename, index=False)
 
-    
+if __name__ == "__main__":
+    # Parameters for the simulation
+    duration = 60  # minutes
+    sampling_rate = 100  # Hz
+    amplitude = 1.0  # base amplitude
+    frequency = 50  # Hz
+    noise = 0.1  # noise level
+
+    # Generate and save the data
+    vibration_df = generate_vibration_data(duration, sampling_rate, amplitude, frequency, noise)
+    save_data_to_csv(vibration_df, "vibration_data.csv")
+    print("Vibration data saved to vibration_data.csv")
 
