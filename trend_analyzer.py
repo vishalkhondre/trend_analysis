@@ -47,6 +47,3 @@ if __name__ == "__main__":
     plot_data_and_trend(vibration_data, 'Vibration Analysis')
 
 
-
-
-
